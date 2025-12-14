@@ -9,7 +9,7 @@ import { checkDbConnection } from './utils/dbHealthCheck'; // Import the new hea
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:3000', // Allow only your frontend's origin
+  origin: 'https://jobmatrix-frontend.vercel.app/', // Allow only your frontend's origin
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'], // Allow all common methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allow specific headers
 }));
