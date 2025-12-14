@@ -7,6 +7,9 @@ export interface IUser {
   email: string;
   password: string;
   role: 'EMPLOYER' | 'JOB_SEEKER';
+  phone?: string;
+  bio?: string;
+  profilePicture?: string;
   createdAt: Date;
   comparePassword(candidatePassword: string): Promise<boolean>;
 }

@@ -32,6 +32,17 @@ const UserSchema: Schema = new Schema({
     enum: ['EMPLOYER', 'JOB_SEEKER'],
     required: [true, 'Please provide a role']
   },
+  phone: {
+    type: String,
+    maxlength: [15, 'Phone number cannot be more than 15 characters']
+  },
+  bio: {
+    type: String,
+    maxlength: [500, 'Bio cannot be more than 500 characters']
+  },
+  profilePicture: {
+    type: String
+  },
   createdAt: {
     type: Date,
     default: Date.now

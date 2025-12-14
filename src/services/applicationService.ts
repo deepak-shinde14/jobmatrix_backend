@@ -43,7 +43,7 @@ export class ApplicationService {
       .sort('-appliedAt');
   }
 
-  async updateApplicationStatus(id: string, status: string, employerId: Types.ObjectId) {
+  async updateApplicationStatus(id: string, status: 'Applied' | 'Reviewed' | 'Rejected' | 'Accepted', employerId: Types.ObjectId) {
     const application = await Application.findById(id).populate({
       path: 'jobId',
       select: 'employerId',

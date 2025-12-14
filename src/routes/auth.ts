@@ -4,7 +4,11 @@ import {
   login, 
   getMe, 
   refreshToken, 
-  logout 
+  logout,
+  changePassword,
+  updateEmail,
+  updateProfile,
+  deleteAccount
 } from '../controllers/authController';
 import { protect } from '../middleware/auth';
 
@@ -15,5 +19,9 @@ router.post('/login', login);
 router.post('/refresh', refreshToken);
 router.post('/logout', protect, logout);
 router.get('/me', protect, getMe);
+router.put('/change-password', protect, changePassword);
+router.put('/update-email', protect, updateEmail);
+router.put('/update-profile', protect, updateProfile);
+router.delete('/delete-account', protect, deleteAccount);
 
 export default router;
